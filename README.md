@@ -1,2 +1,31 @@
-# Tic-Tac-Toe
-A simple two-player Tic-Tac-Toe game built with HTML, CSS, and JavaScript. Features win detection, green highlight for the winning combo, and a reset button. Lightweight, responsive, and easy to play directly in the browser.
+# 🎮 Tic-Tac-Toe Game
+
+A simple **Tic-Tac-Toe** game built using **HTML, CSS, and JavaScript**.  
+Play as `X` or `O` and challenge your friends!
+
+---
+
+## 🚀 Features
+- Two-player gameplay (`X` vs `O`)
+- Automatic win detection with highlights
+- Reset game with **New Game!** button
+- Responsive design with background image
+- Green highlight for the winning combination
+
+---
+
+## 🖼️ Preview
+![Game Screenshot](bg.jpg)  
+
+
+---
+
+Tic-Tac-Toe/
+│
+├── index.html # Main HTML file
+├── Tic-Tac-Toe.css # Styling (UI + background)
+├── Tic-Tac-Toe.js # Game logic (JavaScript)
+├── bg.jpg # Background image
+└── README.md # Project documentation
+
+
