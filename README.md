@@ -15,10 +15,11 @@ Play as `X` or `O` and challenge your friends!
 ---
 
 ## 🖼️ Preview
-![Game Screenshot](bg.jpg)  
-
+<img width="711" height="591" alt="image" src="https://github.com/user-attachments/assets/be5799fa-db53-4fc4-9e26-21a0b7b9de47" />
 
 ---
+
+## 📂 File Structure
 
 Tic-Tac-Toe/
 │
