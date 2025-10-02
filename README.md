@@ -22,11 +22,17 @@ Play as `X` or `O` and challenge your friends!
 ## 📂 File Structure
 
 Tic-Tac-Toe/
+<br>
 │
+<br>
 ├── index.html # Main HTML file
+<br>
 ├── Tic-Tac-Toe.css # Styling (UI + background)
+<br>
 ├── Tic-Tac-Toe.js # Game logic (JavaScript)
+<br>
 ├── bg.jpg # Background image
+<br>
 └── README.md # Project documentation
 
 
