@@ -1,85 +1,225 @@
-#bg
+/* 🌆 Background */
+
+#bg 
 {
-    background-image: url(bg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-    filter: blur(4px);
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(4px);
 }
 
-*
+/* 🧩 Global Reset */
+
+* 
 {
-    margin: 0 auto;
-    padding: 0 auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body
+/* 🧍 Body (Centered + No Scroll) */
+
+html,
+body 
 {
-    text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* 🚫 Prevent scroll */
+  font-family: "Playfair Display", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
 }
 
-h1
+/* 📦 Main Wrapper */
+
+#gameWrapper 
 {
-    margin-top: 30px;
-    font-size: 3rem;
-    text-decoration: underline solid black 2.8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min(80vw, 400px);
+  height: auto;
 }
 
-.container
+/* 🏷️ Title */
+
+.header-section h1 
 {
-    height: 75vh;
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-size: 2.5rem;
+  text-decoration: underline solid black 3px;
+  font-weight: 700;
+  margin-bottom: 3rem; /* ⬆️ Increased space between title and grid */
 }
 
-#gameContainer
+/* 🎮 Game Container */
+
+#gameContainer 
 {
-    height: 62vh;
-    width: 30vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 1rem;
+  padding: 1.2vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
 }
 
-.game
+/* ⬜ Tic-Tac-Toe Grid */
+
+.game 
 {
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vmin;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
 }
 
-.box
+/* ❌⭕ Boxes */
+
+.box 
 {
-    height: 18vmin;
-    width: 18vmin;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem rgb(255, 70, 70);
-    font-size: 10vmin;
-    background-color: crimson;
-    color: solid black;
+  width: 88%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: crimson;
+  box-shadow: 0 0 0.8rem rgb(255, 70, 70);
+  font-size: 8vmin;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-#newGameBtn
+.box:hover 
 {
-    padding: 1rem;
-    font-size: 1.2rem;
-    border-radius: 0.8rem;
-    border: none;
+  background-color: rgb(220, 20, 60);
+  transform: scale(1.05);
+}
+
+/* 🔁 New Game Button Section */
+
+.button-section 
+{
+  margin-top: 1.5rem; /* ⬆️ Added more space below the grid */
+}
+
+/* 🎮 New Game Button */
+
+#newGameBtn 
+{
+  padding: 0.7rem 1.6rem;
+  font-size: 1.1rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  animation: pulseGlow 2s ease-in-out infinite;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 💫 Hover + Glow */
+
+#newGameBtn:hover 
+{
+  background-color: crimson;
+}
+
+/* ✨ Breathing Glow Animation */
+
+@keyframes pulseGlow 
+{
+  0% 
+  {
+    box-shadow: 0 0 5px rgba(255, 70, 70, 0.3);
+  }
+  50% 
+  {
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.8);
+  }
+  100% 
+  {
+    box-shadow: 0 0 5px rgba(255, 70, 70, 0.3);
+  }
+}
+
+/* ✨ Fade-In Animation */
+
+.fade-in 
+{
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.header-section 
+{
+  animation-delay: 0.2s;
+}
+
+#gameContainer 
+{
+  animation-delay: 0.4s;
+}
+
+.button-section 
+{
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn 
+{
+  from 
+  {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to 
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Design */
+
+@media (max-width: 768px) 
+{
+  #gameWrapper {
+    width: 90vw;
+  }
+
+  .header-section h1 
+  {
+    font-size: 2rem;
+    margin-bottom: 1.4rem; /* Smaller gap on mobile */
+  }
+
+  #newGameBtn 
+  {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .button-section 
+  {
+    margin-top: 1.8rem;
+  }
 }
